@@ -25,36 +25,22 @@ class Program
     private static double zeroDouble = 0;
     private static decimal zeroDecimal = 0;
 
+    private static void tryAll(int n)
+    {
+        Console.WriteLine($"{n}/0 for every types");
+        tryIt(() => n / zeroByte);
+        tryIt(() => n / zeroChar);
+        tryIt(() => n / zeroShort);
+        tryIt(() => n / zeroInt);
+        tryIt(() => n / zeroLong);
+        tryIt(() => n / zeroFloat);
+        tryIt(() => n / zeroDouble);
+        tryIt(() => n / zeroDecimal);
+    }
     static void Main()
     {
-        Console.WriteLine("1/0 for every types");
-        tryIt(() => 1 / zeroByte);
-        tryIt(() => 1 / zeroChar);
-        tryIt(() => 1 / zeroShort);
-        tryIt(() => 1 / zeroInt);
-        tryIt(() => 1 / zeroLong);
-        tryIt(() => 1 / zeroFloat);
-        tryIt(() => 1 / zeroDouble);
-        tryIt(() => 1 / zeroDecimal);
-
-        Console.WriteLine("-1/0 for every types");
-        tryIt(() => -1 / zeroByte);
-        tryIt(() => -1 / zeroChar);
-        tryIt(() => -1 / zeroShort);
-        tryIt(() => -1 / zeroInt);
-        tryIt(() => -1 / zeroLong);
-        tryIt(() => -1 / zeroFloat);
-        tryIt(() => -1 / zeroDouble);
-        tryIt(() => -1 / zeroDecimal);
-
-        Console.WriteLine("0/0 for every types");
-        tryIt(() => 0 / zeroByte);
-        tryIt(() => 0 / zeroChar);
-        tryIt(() => 0 / zeroShort);
-        tryIt(() => 0 / zeroInt);
-        tryIt(() => 0 / zeroLong);
-        tryIt(() => 0 / zeroFloat);
-        tryIt(() => 0 / zeroDouble);
-        tryIt(() => 0 / zeroDecimal);
+        tryAll(1);
+        tryAll(-1);
+        tryAll(0);
     }
 }
